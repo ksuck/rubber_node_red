@@ -1,7 +1,25 @@
-#ifndef CONFIG_EQ_H
-#define CONFIG_EQ_H
+//servo
+#include <Servo.h>
+Servo direct_servo;
+#define pinservo 31
 
 // ประกาศ array limit[] ในที่นี้
-const int limit[] = {2, 3, 4};  // หรือใช้ int limit[] = {2, 3, 4}; หากไม่ต้องการให้ค่า limit เปลี่ยนแปลง
+                 //       1       2       3      4
+const int limit[][2] = {{49,2}, {11,12} , {3,10}, {13,8} , {50,9}};  //<แก้ array เป็น 2 มิติ ที่ limit
+const int size_limit = sizeof(limit) / sizeof(limit[0]);
 
-#endif
+//ultrasonic
+const int ultra_trig[] = {4,5};
+const int ulta_echo[] = {44,45};
+const int size_ultra = sizeof(ultra_trig) / sizeof(ultra_trig[0]);
+
+//DC MOTOR
+  
+const int motor_PWM[] = {34,  36, 38,  40, 42};
+const int motor_A[] =   {A0,  A2, A4,  A8, 46};
+const int motor_B[] =   {A1,  A9, A12, A7, 47};   
+const int size_motor = sizeof(motor_PWM) / sizeof(motor_PWM[0]);
+
+//inductive
+const int induct[] = {7,6};
+const int size_induct = sizeof(induct) / sizeof(induct[0]);
